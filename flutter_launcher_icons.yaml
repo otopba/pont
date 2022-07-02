@@ -1,6 +1,6 @@
 flutter_icons:
-  image_path_android: "icons/android_app_icon.png"
-  image_path_ios: "icons/ios_app_icon.png"
+  image_path_android: "icons/app_icon.png"
+  image_path_ios: "icons/app_icon.png"
   android: true
   ios: true
   adaptive_icon_background: "icons/android_app_icon_background.png"
