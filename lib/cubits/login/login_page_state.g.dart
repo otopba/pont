@@ -12,18 +12,18 @@ class _$LoginPageState extends LoginPageState {
   @override
   final String? error;
   @override
-  final bool openNftListPage;
+  final bool openHomePage;
 
   factory _$LoginPageState([void Function(LoginPageStateBuilder)? updates]) =>
       (new LoginPageStateBuilder()..update(updates))._build();
 
   _$LoginPageState._(
-      {required this.loading, this.error, required this.openNftListPage})
+      {required this.loading, this.error, required this.openHomePage})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         loading, r'LoginPageState', 'loading');
     BuiltValueNullFieldError.checkNotNull(
-        openNftListPage, r'LoginPageState', 'openNftListPage');
+        openHomePage, r'LoginPageState', 'openHomePage');
   }
 
   @override
@@ -40,13 +40,13 @@ class _$LoginPageState extends LoginPageState {
     return other is LoginPageState &&
         loading == other.loading &&
         error == other.error &&
-        openNftListPage == other.openNftListPage;
+        openHomePage == other.openHomePage;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc(0, loading.hashCode), error.hashCode),
-        openNftListPage.hashCode));
+    return $jf($jc(
+        $jc($jc(0, loading.hashCode), error.hashCode), openHomePage.hashCode));
   }
 
   @override
@@ -54,7 +54,7 @@ class _$LoginPageState extends LoginPageState {
     return (newBuiltValueToStringHelper(r'LoginPageState')
           ..add('loading', loading)
           ..add('error', error)
-          ..add('openNftListPage', openNftListPage))
+          ..add('openHomePage', openHomePage))
         .toString();
   }
 }
@@ -71,10 +71,9 @@ class LoginPageStateBuilder
   String? get error => _$this._error;
   set error(String? error) => _$this._error = error;
 
-  bool? _openNftListPage;
-  bool? get openNftListPage => _$this._openNftListPage;
-  set openNftListPage(bool? openNftListPage) =>
-      _$this._openNftListPage = openNftListPage;
+  bool? _openHomePage;
+  bool? get openHomePage => _$this._openHomePage;
+  set openHomePage(bool? openHomePage) => _$this._openHomePage = openHomePage;
 
   LoginPageStateBuilder();
 
@@ -83,7 +82,7 @@ class LoginPageStateBuilder
     if ($v != null) {
       _loading = $v.loading;
       _error = $v.error;
-      _openNftListPage = $v.openNftListPage;
+      _openHomePage = $v.openHomePage;
       _$v = null;
     }
     return this;
@@ -109,8 +108,8 @@ class LoginPageStateBuilder
             loading: BuiltValueNullFieldError.checkNotNull(
                 loading, r'LoginPageState', 'loading'),
             error: error,
-            openNftListPage: BuiltValueNullFieldError.checkNotNull(
-                openNftListPage, r'LoginPageState', 'openNftListPage'));
+            openHomePage: BuiltValueNullFieldError.checkNotNull(
+                openHomePage, r'LoginPageState', 'openHomePage'));
     replace(_$result);
     return _$result;
   }

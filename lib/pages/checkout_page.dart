@@ -4,7 +4,7 @@ import 'package:pont/cubits/checkout/checkout_page_cubit.dart';
 import 'package:pont/cubits/checkout/checkout_page_state.dart';
 import 'package:pont/images.dart';
 import 'package:pont/pages/buy_ok_page.dart';
-import 'package:pont/pages/shop_page.dart';
+import 'package:pont/pages/home_page.dart';
 import 'package:pont/utils/logs/log.dart';
 import 'package:pont/widgets/bottom_button.dart';
 
@@ -163,7 +163,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
 
     Navigator.of(context).pushNamedAndRemoveUntil(
       BuyOk.routeName,
-      ModalRoute.withName(ShopPage.routeName),
+      ModalRoute.withName(HomePage.routeName),
     );
   }
 }

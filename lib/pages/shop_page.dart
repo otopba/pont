@@ -7,13 +7,10 @@ import 'package:pont/cubits/shop/shop_page_state.dart';
 import 'package:pont/data/client/client_pont.dart';
 import 'package:pont/pont_bottom_sheet.dart';
 import 'package:pont/utils/logs/log.dart';
-import 'package:pont/widgets/app_menu.dart';
 
 const _tag = 'shop_page';
 
 class ShopPage extends StatefulWidget {
-  static const routeName = 'shop';
-
   const ShopPage({
     Key? key,
   }) : super(key: key);
@@ -22,13 +19,18 @@ class ShopPage extends StatefulWidget {
   State<ShopPage> createState() => _ShopPageState();
 }
 
-class _ShopPageState extends State<ShopPage> {
+class _ShopPageState extends State<ShopPage>
+    with AutomaticKeepAliveClientMixin {
   final _numberFormat = NumberFormat('#,###');
   final _cubit = ShopPageCubit();
   late ShopPageState _state;
 
   @override
+  bool get wantKeepAlive => true;
+
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     return BlocConsumer<ShopPageCubit, ShopPageState>(
       bloc: _cubit,
       listener: (context, state) {},
@@ -46,31 +48,16 @@ class _ShopPageState extends State<ShopPage> {
   }
 
   Widget _body() {
-    return Stack(
-      children: [
-        CustomScrollView(
-          physics: const BouncingScrollPhysics(
-            parent: AlwaysScrollableScrollPhysics(),
-          ),
-          slivers: <Widget>[
-            const SliverToBoxAdapter(child: SizedBox(height: 30)),
-            _top(),
-            const SliverToBoxAdapter(child: SizedBox(height: 30)),
-            _list(),
-          ],
-        ),
-        _menu(),
-      ],
-    );
-  }
-
-  Widget _menu() {
-    return const Align(
-      alignment: Alignment.bottomCenter,
-      child: Padding(
-        padding: EdgeInsets.only(bottom: 16),
-        child: AppMenu(activeType: AppMenuType.shop),
+    return CustomScrollView(
+      physics: const BouncingScrollPhysics(
+        parent: AlwaysScrollableScrollPhysics(),
       ),
+      slivers: <Widget>[
+        const SliverToBoxAdapter(child: SizedBox(height: 30)),
+        _top(),
+        const SliverToBoxAdapter(child: SizedBox(height: 30)),
+        _list(),
+      ],
     );
   }
 

@@ -6,14 +6,11 @@ import 'package:pont/cubits/profile/profile_page_state.dart';
 import 'package:pont/images.dart';
 import 'package:pont/pages/login_page.dart';
 import 'package:pont/utils/logs/log.dart';
-import 'package:pont/widgets/app_menu.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 const _tag = 'profile_page';
 
 class ProfilePage extends StatefulWidget {
-  static const routeName = 'profile';
-
   const ProfilePage({
     Key? key,
   }) : super(key: key);
@@ -22,12 +19,17 @@ class ProfilePage extends StatefulWidget {
   State<ProfilePage> createState() => _ProfilePageState();
 }
 
-class _ProfilePageState extends State<ProfilePage> {
+class _ProfilePageState extends State<ProfilePage>
+    with AutomaticKeepAliveClientMixin {
   final _cubit = ProfilePageCubit();
   late ProfilePageState _state;
 
   @override
+  bool get wantKeepAlive => true;
+
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     return BlocConsumer<ProfilePageCubit, ProfilePageState>(
       bloc: _cubit,
       listener: (context, state) {},
@@ -45,28 +47,23 @@ class _ProfilePageState extends State<ProfilePage> {
   }
 
   Widget _body() {
-    return Stack(
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 30),
-              _top(),
-              const SizedBox(height: 30),
-              _wallet(),
-              const SizedBox(height: 38),
-              _teamTitle(),
-              const SizedBox(height: 5),
-              _teamSubtitle(),
-              const SizedBox(height: 27),
-              _team(),
-            ],
-          ),
-        ),
-        _menu(),
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(height: 30),
+          _top(),
+          const SizedBox(height: 30),
+          _wallet(),
+          const SizedBox(height: 38),
+          _teamTitle(),
+          const SizedBox(height: 5),
+          _teamSubtitle(),
+          const SizedBox(height: 27),
+          _team(),
+        ],
+      ),
     );
   }
 
@@ -180,16 +177,6 @@ class _ProfilePageState extends State<ProfilePage> {
             PontImage.copy(width: 24, height: 24),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _menu() {
-    return const Align(
-      alignment: Alignment.bottomCenter,
-      child: Padding(
-        padding: EdgeInsets.only(bottom: 16),
-        child: AppMenu(activeType: AppMenuType.profile),
       ),
     );
   }

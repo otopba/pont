@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pont/cubits/login/login_page_cubit.dart';
 import 'package:pont/cubits/login/login_page_state.dart';
 import 'package:pont/images.dart';
+import 'package:pont/pages/home_page.dart';
 import 'package:pont/pages/nft_list_page.dart';
 import 'package:pont/utils/logs/log.dart';
 import 'package:pont/utils/string_extension.dart';
@@ -47,9 +48,9 @@ class _LoginPageState extends State<LoginPage> {
           );
           ScaffoldMessenger.of(context).showSnackBar(snackBar);
         }
-        if (previous.openNftListPage != current.openNftListPage &&
-            current.openNftListPage) {
-          Navigator.of(context).pushNamed(NftListPage.routeName);
+        if (previous.openHomePage != current.openHomePage &&
+            current.openHomePage) {
+          Navigator.of(context).pushNamed(HomePage.routeName);
         }
         return true;
       },

@@ -1,4 +1,9 @@
-### Tips
+# Testing
+
+- android: app-release.apk inside repo
+- ios: testflight 
+
+# Developer Tips
 
 ## Run code generation
 

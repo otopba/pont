@@ -23,7 +23,7 @@ class LoginPageCubit extends Cubit<LoginPageState> {
           LoginPageState(
             (b) => b
               ..loading = false
-              ..openNftListPage = false,
+              ..openHomePage = false,
           ),
         ) {
     _init();
@@ -92,7 +92,7 @@ class LoginPageCubit extends Cubit<LoginPageState> {
         (b) => b
           ..loading = false
           ..error = null
-          ..openNftListPage = true,
+          ..openHomePage = true,
       ),
     );
   }

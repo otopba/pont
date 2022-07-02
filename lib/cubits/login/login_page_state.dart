@@ -13,5 +13,5 @@ abstract class LoginPageState
 
   String? get error;
 
-  bool get openNftListPage;
+  bool get openHomePage;
 }

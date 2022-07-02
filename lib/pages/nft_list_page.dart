@@ -10,13 +10,10 @@ import 'package:pont/pont_bottom_sheet.dart';
 import 'package:pont/utils/animations.dart';
 import 'package:pont/utils/logs/log.dart';
 import 'package:pont/utils/string_extension.dart';
-import 'package:pont/widgets/app_menu.dart';
 
 const _tag = 'nft_list_page';
 
 class NftListPage extends StatefulWidget {
-  static const routeName = 'nft-list';
-
   const NftListPage({
     Key? key,
   }) : super(key: key);
@@ -25,12 +22,17 @@ class NftListPage extends StatefulWidget {
   State<NftListPage> createState() => _NftListPageState();
 }
 
-class _NftListPageState extends State<NftListPage> {
+class _NftListPageState extends State<NftListPage>
+    with AutomaticKeepAliveClientMixin {
   final _cubit = NftListPageCubit();
   late NftListPageState _state;
 
   @override
+  bool get wantKeepAlive => true;
+
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     return BlocConsumer<NftListPageCubit, NftListPageState>(
       bloc: _cubit,
       listener: (context, state) {},
@@ -48,31 +50,16 @@ class _NftListPageState extends State<NftListPage> {
   }
 
   Widget _body() {
-    return Stack(
-      children: [
-        CustomScrollView(
-          physics: const BouncingScrollPhysics(
-            parent: AlwaysScrollableScrollPhysics(),
-          ),
-          slivers: <Widget>[
-            const SliverToBoxAdapter(child: SizedBox(height: 30)),
-            _top(),
-            const SliverToBoxAdapter(child: SizedBox(height: 30)),
-            _grid(),
-          ],
-        ),
-        _menu(),
-      ],
-    );
-  }
-
-  Widget _menu() {
-    return const Align(
-      alignment: Alignment.bottomCenter,
-      child: Padding(
-        padding: EdgeInsets.only(bottom: 16),
-        child: AppMenu(activeType: AppMenuType.nftList),
+    return CustomScrollView(
+      physics: const BouncingScrollPhysics(
+        parent: AlwaysScrollableScrollPhysics(),
       ),
+      slivers: <Widget>[
+        const SliverToBoxAdapter(child: SizedBox(height: 30)),
+        _top(),
+        const SliverToBoxAdapter(child: SizedBox(height: 30)),
+        _grid(),
+      ],
     );
   }
 

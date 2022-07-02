@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:pont/di.dart';
 import 'package:pont/pages/buy_ok_page.dart';
 import 'package:pont/pages/checkout_page.dart';
+import 'package:pont/pages/home_page.dart';
 import 'package:pont/pages/login_page.dart';
 import 'package:pont/pages/logs_page.dart';
-import 'package:pont/pages/nft_list_page.dart';
-import 'package:pont/pages/profile_page.dart';
-import 'package:pont/pages/shop_page.dart';
 import 'package:pont/utils/string_extension.dart';
 
 class App extends StatelessWidget {
@@ -19,13 +17,11 @@ class App extends StatelessWidget {
       home: const LoginPage(),
       // home: const HomePage(),
       routes: {
+        HomePage.routeName: (context) => const HomePage(),
         LogsPage.routeName: (context) => const LogsPage(),
-        NftListPage.routeName: (context) => const NftListPage(),
         LoginPage.routeName: (context) => const LoginPage(),
-        ShopPage.routeName: (context) => const ShopPage(),
         CheckoutPage.routeName: (context) => const CheckoutPage(),
         BuyOk.routeName: (context) => const BuyOk(),
-        ProfilePage.routeName: (context) => const ProfilePage(),
       },
       initialRoute: _initialRoute(),
     );
@@ -37,7 +33,7 @@ class App extends StatelessWidget {
     if (wallet.isNullOrEmpty) {
       return LoginPage.routeName;
     } else {
-      return NftListPage.routeName;
+      return HomePage.routeName;
     }
   }
 }
