@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1074512840342",
+    "project_id": "pont-68d4e",
+    "storage_bucket": "pont-68d4e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1074512840342:android:44141d43005480006824b7",
+        "android_client_info": {
+          "package_name": "dev.optimist.pont"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1074512840342-8ov1b554lb4un2iiv3cn69m107iqf1no.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dev.optimist.pont",
+            "certificate_hash": "84afd98402d71066d35e2f2ae6ab9a6124334ebd"
+          }
+        },
+        {
+          "client_id": "1074512840342-040bcctv1kng603n8os8pr9g6fis2pl7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxoO19d-PB9O4IKpdIsL9NdYWyxOhDK9E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1074512840342-040bcctv1kng603n8os8pr9g6fis2pl7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1074512840342-q9vf2queqcgudkcf8lvgqpsgb9662s0j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "dev.optimist.pont",
+                "app_store_id": "1632411556"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
