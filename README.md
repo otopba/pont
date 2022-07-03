@@ -1,7 +1,7 @@
 # Testing
 
 - android: app-release.apk inside repo
-- ios: testflight 
+- ios: testflight https://testflight.apple.com/join/5oHeExtj
 
 # Developer Tips
 
