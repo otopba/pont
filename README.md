@@ -5,7 +5,18 @@ The project was made as part of [Hack-a-TON](https://t.me/toncontests/40)
 pont is:
 
 1) Keychain that can display an image
+<p align="center">
+    <img src="./doc/4.webp" width="300px"/>
+</p>
+
+
 2) Mobile application that uploads NFT to the keychain
+
+<p align="center">
+    <img src="./doc/1.webp" width="100px"/>
+    <img src="./doc/2.webp" width="100px"/>
+    <img src="./doc/3.webp" width="100px"/>
+</p>
 
 How it works?
 
