@@ -41,6 +41,7 @@ class _ShopPageState extends State<ShopPage>
           backgroundColor: Colors.white,
           body: SafeArea(
             child: _body(),
+            bottom: false,
           ),
         );
       },

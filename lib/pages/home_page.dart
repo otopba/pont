@@ -51,8 +51,8 @@ class _HomePageState extends State<HomePage> {
   Widget _menu() {
     return Align(
       alignment: Alignment.bottomCenter,
-      child: Padding(
-        padding: const EdgeInsets.only(bottom: 16),
+      child: SafeArea(
+        top: false,
         child: AppMenu(
           activePage: _activePage,
           onMenuPressed: _onMenuPressed,

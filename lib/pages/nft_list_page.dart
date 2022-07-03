@@ -42,6 +42,7 @@ class _NftListPageState extends State<NftListPage>
         return Scaffold(
           backgroundColor: Colors.white,
           body: SafeArea(
+            bottom: false,
             child: _body(),
           ),
         );
